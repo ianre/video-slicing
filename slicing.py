@@ -3,16 +3,18 @@ import cv2
 
 from subprocess import Popen, PIPE
 
+_stride = 2
 
 def main():
     task = "Suturing"
     CWD = os.path.dirname(os.path.realpath(__file__))
     image_dir = os.path.join(CWD, task,"images")
     video_dir = os.path.join(CWD, task,"videos")
-    slice_task(image_dir,video_dir,1,DEBUG=False)
+    slice_task(image_dir,video_dir,DEBUG=False)
 
 
-def slice_task(image_dir, video_dir, stride,DEBUG=False):
+def slice_task(image_dir, video_dir, DEBUG=False):
+    stride = _stride
     for root, dirs, files in os.walk(video_dir):
         for file in files:
 
