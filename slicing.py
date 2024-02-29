@@ -56,6 +56,8 @@ def slice_task(image_dir, video_dir, stride,DEBUG=False):
                     if not DEBUG:
                         cv2.imwrite(save_frame, frame) 
                         print("saved frame:",save_frame, "i:",i,"ret:",ret,"cap:",cap)
+                    else:
+                        print("would've written:",save_frame, "i:",i,"ret:",ret,"cap:",cap)
                     saved_i += 1        
                 else: 
                     #frame_data.append([i , "frame_"+getIndexString(str(i)), ""])
